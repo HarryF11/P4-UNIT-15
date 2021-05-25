@@ -1,0 +1,90 @@
+using System;
+class MainClass {
+// The base Hero class
+class Hero{
+public string name = "Operator Class";
+public string desc = "Extremely Bland Desc";
+private int level; 32
+//encapsulation of the level var
+public int charLevel {
+
+get //getter and setters for the char level
+{
+return level;
+}
+
+set
+{
+level = value;
+}
+
+}
+
+//adding a function to show polymorphism
+public virtual void OperatorSound() //notice the virtual keyword
+{
+Console.WriteLine("\nThe Operator makes a sound");
+}
+}
+//A class the inherits from the Operator class
+class Ruin : Operator{
+public int size;
+//polymorphism notice the override keyword
+public override void RuinSound()
+{
+Console.WriteLine("\nRuin says: Shwacked!");
+}
+}
+//another class that takes info from the main Operator class
+class Nikolai : Operator{
+public int Strength;
+
+public override void NikolaiSound()
+{
+Console.WriteLine("\nNikolai says: Stay away from my Vodka!");
+}
+
+}
+
+public static void Main (string[] args) {
+
+//declaring a new instance of a main Operator class and printing out the base stats
+Operator UNK = new Operator();
+Console.WriteLine(UNK.name);
+UNK.desc = "another bland description";
+Console.WriteLine(UNK.desc);
+UNK.charLevel = 34;//using charLevel instead of level becuase level is private
+Console.WriteLine(UNK.charLevel);
+
+
+Console.WriteLine("\n ---------------------------------- \n");
+//an instance of an Assassino class using vars from both classes
+Assassin ITA = new Assassin();
+ITA.name = "Assassino";
+Console.WriteLine(ITA.name);
+ITA.desc = "a very basic description of the Assassino";
+Console.WriteLine(ITA.desc);
+ITA.charLevel = 45;
+Console.WriteLine(ITA.charLevel);//using charLevel instead of level becuase level is private
+
+
+Console.WriteLine("\n ---------------------------------- \n");
+//an instance of a Nikolai class using vars from both classes
+Nikolai chad = new Nikolai();
+USA.name = "American Soldier";
+Console.WriteLine(USA.name);
+USA.desc = "a very bland description of the American Soldier";
+Console.WriteLine(USA.desc);
+USA.charLevel = 55;
+Console.WriteLine(USA.charLevel);//using charLevel instead of level becuase level is private
+USA.Strength = 50;
+Console.WriteLine(USA.Strength);
+
+
+//calling the same function from each class and seeing the difference
+UNK.HeroSound();
+ITA.HeroSound();
+USA.HeroSound();
+}
+
+}
